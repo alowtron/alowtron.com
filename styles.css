@@ -1,0 +1,50 @@
+/*Code for the nav bar*/
+.logo {
+    position: absolute;
+    left: 0; 
+    width: 36px;
+    height: 36px;
+    margin: 5px;
+}
+
+/*nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #242424;
+    padding-left: 48px;
+    /*position: right;*/
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #242424;
+}
+
+.active {
+    background-color: #2A3035;
+    color: silver;
+}
+/*sets margin to 0 in body so that nav bar spans properly*/
+body {
+    margin: 0;
+}
+
+/*main body*/
+html {
+    background-color: #2A3035;
+}
