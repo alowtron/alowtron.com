@@ -1,2 +1,2 @@
 # alowtron.com
-the code for my website
+The code for my website, is not even close to done yet.
