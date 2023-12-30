@@ -1,1 +1,1 @@
-document.write("<p>Test Text</p>")
+document.write("<p>Footer Bar Eventually</p>")
