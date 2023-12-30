@@ -7,38 +7,42 @@
     margin: 5px;
 }
 
-/*nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}*/
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #242424;
     padding-left: 48px;
-    /*position: right;*/
 }
-li {
+nav li {
+    /* messing around with a border */
+    /* border-left: solid;
+    border-width: 0.01rem;
+    border-color: silver; */
     float: left;
 }
-li a {
+nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover:not(.active) {
-    background-color: #242424;
+/*cool blue #202835 */
+nav li a:hover:not(.active) {
+    background-color: #202835;
 }
 
-.active {
+nav .active {
     background-color: #2A3035;
     color: silver;
 }
+
+h1 {
+    color: silver;
+}
+
 /*sets margin to 0 in body so that nav bar spans properly*/
 body {
     margin: 0;
