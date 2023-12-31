@@ -2,9 +2,9 @@
 .logo {
     position: absolute;
     left: 0; 
-    width: 36px;
-    height: 36px;
-    margin: 5px;
+    width: 2.25rem; 
+    height: 2.25rem;
+    margin: 0.3rem;
 }
 
 nav ul {
