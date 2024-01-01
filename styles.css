@@ -20,6 +20,7 @@ nav li {
     /* border-left: solid;
     border-width: 0.01rem;
     border-color: silver; */
+    /* margin: left; */
     float: left;
 }
 nav li a {
@@ -36,12 +37,8 @@ nav li a:hover:not(.active) {
 
 nav .active {
     background-color: #2A3035;
-    color: silver;
 }
 
-h1 {
-    color: silver;
-}
 
 /*sets margin to 0 in body so that nav bar spans properly*/
 body {
@@ -49,6 +46,10 @@ body {
 }
 
 /*main body*/
+main {
+    margin: 3rem;
+}
 html {
     background-color: #2A3035;
+    color: silver;
 }

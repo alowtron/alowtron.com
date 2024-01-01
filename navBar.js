@@ -22,7 +22,7 @@ function navBarDisplay(page) {
     }
     document.write(
         "<nav>",
-            "<a href=\"index.html\"> <img src=\"logo.png\" class=\"logo\" alt=\"Logo\" ></img> </a>",
+            "<a href=\"index.html\"> <img src=\"images/logo.png\" class=\"logo\" alt=\"Logo\" ></img> </a>",
                 "<ul>",
                     "<li>",
                         `<li ${indexClass}><a href=\"index.html\">Home</a></li>`,
