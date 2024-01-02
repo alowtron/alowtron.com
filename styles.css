@@ -1,3 +1,22 @@
+/* Code for icons */
+.reddit {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0.3rem;
+}
+/* Code for footer */
+footer {
+    background-color: #242424;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+footer ul {
+    list-style-type: none;
+}
+footer li a {
+    color: white;
+    text-decoration: none;
+}
 /*Code for the nav bar*/
 .logo {
     position: absolute;
