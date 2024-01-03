@@ -8,6 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="logo.png">
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <style>
+            .grid {
+                display: grid;
+                grid-template-columns: 20%, 20%, 20%, 20%, 20%;
+                grid-template-rows: 500px, 500px, 15rem, 15rem;
+            }
+            .h1Class {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 1;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -16,7 +28,12 @@
         </header>
         
         <main>
-            <h1>Just some temp text</h1>
+            <div class="grid">
+                <h1 class="h1Class">Who I Am....</h1>
+                <div>Temp</div>
+                <div>temp</div>
+            </div>
+            
         </main>
         <footer>
             <script src="footerBar.js"></script>

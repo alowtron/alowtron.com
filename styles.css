@@ -6,11 +6,14 @@
 }
 /* Code for footer */
 footer {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
     background-color: #242424;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
 footer ul {
+    grid-column-start: 3;
     list-style-type: none;
 }
 footer li a {
