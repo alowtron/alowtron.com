@@ -1,4 +1,4 @@
-function navBarDisplay(page) {
+function navBarDisplay(page, subfolder = false) {
     let indexClass = ""
     if (page == "index") {
         indexClass = "class=\"active\""
@@ -20,17 +20,23 @@ function navBarDisplay(page) {
     } else {
         blogClass = ""
     }
+    if (subfolder == true) {
+        upFolder = "../"
+    } else {
+        upFolder = ""
+    }
     document.write(
         "<nav>",
-            "<a href=\"index.html\"> <img src=\"images/logo.png\" class=\"logo\" alt=\"Logo\" ></img> </a>",
+            `<a href=\"index.html\"> <img src=\"${upFolder}images/logo.png\" class=\"logo\" alt=\"Logo\" ></img> </a>`,
                 "<ul>",
                     "<li>",
-                        `<li ${indexClass}><a href=\"index.html\">Home</a></li>`,
-                        `<li ${projectClass}><a href=\"projects.html\">Projects</a></li>`,
-                        `<li ${aboutClass}><a href=\"about.html\">About</a></li>`,
-                        `<li ${blogClass}><a href=\"blog.html\">Blog</a></li>`,
+                        `<li ${indexClass}><a href=\"${upFolder}index.html\">Home</a></li>`,
+                        `<li ${projectClass}><a href=\"${upFolder}projects.html\">Projects</a></li>`,
+                        `<li ${aboutClass}><a href=\"${upFolder}about.html\">About</a></li>`,
+                        `<li ${blogClass}><a href=\"${upFolder}blog.html\">Blog</a></li>`,
                     "</li>",
                 "</ul>",
         "</nav>"
     )
 }
+ 
