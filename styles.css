@@ -70,8 +70,17 @@ body {
 /*main body*/
 main {
     margin: 3rem;
+
+}
+
+p {
+    font-size: 1.2rem;
 }
 html {
     background-color: #2A3035;
     color: silver;
+}
+
+.indent {
+    text-indent: 2rem;
 }
