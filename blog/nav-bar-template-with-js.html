@@ -1,58 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            Alowtron-Blog
-        </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="../logo.png">
-        <link rel="stylesheet" type="text/css" href="../styles.css">
-        <link rel="stylesheet" href="prism.css">
-    </head>
-    <body>
-        <header>
-            <script src="../navBar.js"></script>
-            <script>navBarDisplay("blog", true)</script>
-        </header>
-        
-        <main>
-            <h1>
-                How to make a nav bar template using JavaScript.
-            </h1>
-            <p class="indent">
-                The other day when I was working on this website I decided that I wanted a way to template my html nav bar.
-            </p>
-            <p class="indent">
-                I knew that the easiest way to do this would be to use some sort of back end language like node or php, but I thought to myself, why go through the process of setting up a backend for a static website?
-            </p>
-            <script src="prism.js"></script>
-            <!-- <pre> -->
-                <code class="language-javascript">
-                    const temp1 = 1
-                    console.log("hello")
-                    document.write(
-        "<nav>",
-            `<a href=\"index.html\"> <img src=\"${upFolder}images/logo.png\" class=\"logo\" alt=\"Logo\" ></img> </a>`,
-                "<ul>",
-                    "<li>",
-                        `<li ${indexClass}><a href=\"${upFolder}index.html\">Home</a></li>`,
-                        `<li ${projectClass}><a href=\"${upFolder}projects.html\">Projects</a></li>`,
-                        `<li ${aboutClass}><a href=\"${upFolder}about.html\">About</a></li>`,
-                        `<li ${blogClass}><a href=\"${upFolder}blog.html\">Blog</a></li>`,
-                    "</li>",
-                "</ul>",
-        "</nav>"
-    )
-                </code>
-            <!-- </pre> -->
-                
 
-            
-        </main>
-        <footer>
-            <script src="../footerBar.js"></script>
-        </footer>
-    </body>
+<head>
+    <title>
+        Alowtron-Blog
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+</head>
+
+<body>
+    <header>
+        <script src="../navBar.js"></script>
+        <script>navBarDisplay("blog", true)</script>
+    </header>
+
+    <main>
+        <h1>
+            How to make a nav bar template using JavaScript.
+        </h1>
+        <p class="indent">
+            Web frameworks have a way to take and make a template that allows to reuse html code in multiple webpages, if you are not using a framework most people will tell you that you should use one to take and template your nav bar. Although for a lot of projects that might be correct, if you are making a static website, there should be no need to take and use framework just for making templates.
+        </p>
+        <p class="indent">
+            Take a look at this code here. This code is the code that I had in every page of my website when I was first making it. I was getting tired of every time I made a new page, or I wanted to make some changes to it, having to take and change the code in multiple files.
+        </p>
+        <pre>
+            <code class="language-markup">
+&lt;nav&gt;
+    &lt;a href=&quot;index.html&quot;&gt; &lt;img src=&quot;images/logo.png&quot; class=&quot;logo&quot; alt=&quot;Logo&quot; &gt;&lt;/img&gt;&lt;/a&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;projects.html&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;blog.html&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+            </code>
+        </pre>
+        <h2>
+            Step 1: Create the JavaScript File
+        </h2>
+        <p class="indent">
+            Make a file and place it in the same directory as your html files. I named my JavaScript file "navBar.js".
+        </p>
+        <h2>
+            Step 2: Use the document.write Method
+        </h2>
+        <p class="indent">
+            The document.write method in JavaScript allows you to take whatever is inside of it and put it on the page. An important thing to note about this is that when it used while the page is still loading, it slots the text inside of it in to the html of the page like it is more html. If it is used after the page has finished loading, it will take and replace all of the code on the page with what is inside of it.
+        </p>
+        <p class="indent">
+            Take and write the following into your JavaScript file that you made in step one.
+        </p>
+        <pre>
+            <code class="language-javascript">
+document.write(
+
+)
+            </code>
+        </pre>
+        <p class="indent">
+            You will notice that I left a space in the code, I did this so that I can put in the html is a easy to read way.
+        </p>
+        <h2>
+            Step 3: Put in Your HTML Header Code
+        </h2>
+        <p class="indent">
+            You are going to want put in your code line by line, like it is a array. Around each line you need to put quotation marks and after each line you need to put a comma. Also, don't forget to put backslashes before every quotation mark in your HTML Code so that it shows on the page and does not mess up your code. See the code below as a example.
+        </p>
+        <pre>
+            <code class="language-javascript">
+document.write(
+    '&lt;nav&gt;',
+        '&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt;&lt;/a&gt;',
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;projects.html&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;blog.html&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+)
+            </code>
+        </pre>
+
+        <pre>
+            <code>
+<nav>
+    <a href="index.html"> <img src="images/logo.png" class="logo" alt="Logo" ></img></a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
+</nav>
+            </code>
+        </pre>
+
+
+        <pre>
+            <code class="language-javascript">
+document.write(
+    &quot;&lt;nav&gt;&quot;,
+    `&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;${upFolder}images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt; &lt;/a&gt;`,
+        &quot;&lt;ul&gt;&quot;,
+            `&lt;li ${indexClass}&gt;&lt;a href=\&quot;${upFolder}index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
+            `&lt;li ${projectClass}&gt;&lt;a href=\&quot;${upFolder}projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
+            `&lt;li ${aboutClass}&gt;&lt;a href=\&quot;${upFolder}about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
+            `&lt;li ${blogClass}&gt;&lt;a href=\&quot;${upFolder}blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
+        &quot;&lt;/ul&gt;&quot;,
+    &quot;&lt;/nav&gt;&quot;
+)
+            </code>
+        </pre>
+
+
+
+    </main>
+    <footer>
+        <script src="../footerBar.js"></script>
+    </footer>
+</body>
 
 </html>
