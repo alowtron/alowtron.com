@@ -88,6 +88,20 @@ document.write(
 )
             </code>
         </pre>
+        <h2>
+            Step 4: Implementing the Code
+        </h2>
+        <p class="indent">
+            Now that you have the JavaScript code that you need, the next step is to reference the file as the site is loading, you do this by taking and just referencing the JavaScript file in the right place. In this case, the right place inside of the header element of the HTML files. A example is down below
+        </p>
+        <pre>
+            <code class="language-markup">
+&lt;header&gt;
+    &lt;script src=&quot;navBar.js&quot;&gt;&lt;/script&gt;
+&lt;/header&gt;
+            </code>
+        </pre>
+
 
         <pre>
             <code>
@@ -102,8 +116,15 @@ document.write(
 </nav>
             </code>
         </pre>
-
-
+        <p class="indent">
+            If you run this code now, you should see it working, bellow I will walk through some modification that I made to the code to make it work on my website.
+        </p>
+        <h2>
+            Bonus Step 1: Letting the code know what page it was on.
+        </h2>
+        <p class="indent">
+            
+        </p>
         <pre>
             <code class="language-javascript">
 document.write(
