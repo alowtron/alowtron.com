@@ -78,6 +78,22 @@ main {
 p {
     font-size: 1.2rem;
 }
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+a {
+    color: silver;
+    text-decoration: none;
+}
 html {
     background-color: #2A3035;
     color: silver;
@@ -86,5 +102,20 @@ html {
 .indent {
     text-indent: 2rem;
 }
-
-
+.blog-link-display {
+    padding-top: 0.1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.1rem;
+    border-radius: 1rem;
+    background-color: #242424;
+}
+.blog-link-display:hover {
+    background-color: #202835;
+}
+.minus-margin {
+    margin-bottom: -1.9%;
+}
+.blog-date {
+    text-align: right;
+}
