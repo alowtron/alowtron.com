@@ -103,19 +103,7 @@ document.write(
         </pre>
 
 
-        <pre>
-            <code>
-<nav>
-    <a href="index.html"> <img src="images/logo.png" class="logo" alt="Logo" ></img></a>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-    </ul>
-</nav>
-            </code>
-        </pre>
+
         <p class="indent">
             If you run this code now, you should see it working, bellow I will walk through some modification that I made to the code to make it work on my website.
         </p>
@@ -123,8 +111,82 @@ document.write(
             Bonus Step 1: Letting the code know what page it was on.
         </h2>
         <p class="indent">
-            
+            In my nav bar, depending which page it is on, I wanted to have a way to take change the color of the active page as shown picture below.
         </p>
+        <img src="blogImages/001.png" alt="Image of nav bar of the website">
+        <p class="indent">
+            You will notice in the picture above that the blog page, which is the current active page is highlighted. This done by putting a active class after the li element in the code.
+        </p>
+        <p class="indent">
+            The first thing to solve here is how to get info on which page it is on, I did this by takeing and making the JavaScript into a function as shown bellow.
+        </p>
+        <pre>
+            <code class="language-javascript">
+function navBarDisplay() {
+    document.write(
+        &quot;&lt;nav&gt;&quot;,
+            `&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt; &lt;/a&gt;`,
+                &quot;&lt;ul&gt;&quot;,
+                        `&lt;li&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li&gt;&lt;a href=\&quot;about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li&gt;&lt;a href=\&quot;blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
+                &quot;&lt;/ul&gt;&quot;,
+        &quot;&lt;/nav&gt;&quot;
+    )
+}
+            </code>
+        </pre>
+        <p class="indent">
+            Next this code need a extra step to display the code in the html.
+        </p>
+        <pre>
+            <code class="language-markup">
+&lt;header&gt;
+    &lt;script src=&quot;navBar.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;navBarDisplay()&lt;/script&gt;
+&lt;/header&gt;
+            </code>
+        </pre>
+        <pre>
+            <code class="language-javascript">
+function navBarDisplay(page) {
+    let indexClass = ""
+    if (page == "index") {
+        indexClass = "class=\"active\""
+    } else {
+        indexClass = ""
+    }
+    if (page == "projects") {
+        projectClass = "class=\"active\""
+    } else {
+        projectClass = ""
+    }
+    if (page == "about") {
+        aboutClass = "class=\"active\""
+    } else {
+        aboutClass = ""
+    }
+    if (page == "blog") {
+        blogClass = "class=\"active\""
+    } else {
+        blogClass = ""
+    }
+    document.write(
+        &quot;&lt;nav&gt;&quot;,
+            `&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt; &lt;/a&gt;`,
+                &quot;&lt;ul&gt;&quot;,
+                        `&lt;li ${indexClass}&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${projectClass}&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${aboutClass}&gt;&lt;a href=\&quot;about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${blogClass}&gt;&lt;a href=\&quot;blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
+                &quot;&lt;/ul&gt;&quot;,
+        &quot;&lt;/nav&gt;&quot;
+    )
+}
+            </code>
+        </pre>
+        
         <pre>
             <code class="language-javascript">
 document.write(
@@ -140,7 +202,19 @@ document.write(
 )
             </code>
         </pre>
-
+        <pre>
+            <code>
+<nav>
+    <a href="index.html"> <img src="images/logo.png" class="logo" alt="Logo" ></img></a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
+</nav>
+            </code>
+        </pre>
 
 
     </main>
