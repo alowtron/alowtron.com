@@ -114,7 +114,3 @@ pre[class*=language-] {
 .token.entity {
     cursor: help
 }
-
-code {
-    width: 500px;
-}

@@ -69,7 +69,9 @@ body {
 
 /*main body*/
 main {
-    margin: 3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
 
 }
 
