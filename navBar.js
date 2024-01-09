@@ -2,28 +2,22 @@ function navBarDisplay(page, subfolder = false) {
     let indexClass = ""
     if (page == "index") {
         indexClass = "class=\"active\""
-    } else {
-        indexClass = ""
     }
+    let projectClass = ""
     if (page == "projects") {
         projectClass = "class=\"active\""
-    } else {
-        projectClass = ""
     }
+    let aboutClass = ""
     if (page == "about") {
         aboutClass = "class=\"active\""
-    } else {
-        aboutClass = ""
     }
+    let blogClass = ""
     if (page == "blog") {
         blogClass = "class=\"active\""
-    } else {
-        blogClass = ""
     }
+    let upFolder = ""
     if (subfolder == true) {
         upFolder = "../"
-    } else {
-        upFolder = ""
     }
     document.write(
         "<nav>",

@@ -7,7 +7,7 @@
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="stylesheet" href="prism.css">
     <script src="prism.js"></script>
@@ -32,7 +32,7 @@
         <pre>
             <code class="language-markup">
 &lt;nav&gt;
-    &lt;a href=&quot;index.html&quot;&gt; &lt;img src=&quot;images/logo.png&quot; class=&quot;logo&quot; alt=&quot;Logo&quot; &gt;&lt;/img&gt;&lt;/a&gt;
+    &lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;images/logo.png&quot; class=&quot;logo&quot; alt=&quot;Logo&quot;&gt;&lt;/img&gt;&lt;/a&gt;
     &lt;ul&gt;
         &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;projects.html&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
@@ -77,7 +77,7 @@ document.write(
             <code class="language-javascript">
 document.write(
     '&lt;nav&gt;',
-        '&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt;&lt;/a&gt;',
+        '&lt;a href=\&quot;index.html\&quot;&gt;&lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot;&gt;&lt;/img&gt;&lt;/a&gt;',
         '&lt;ul&gt;',
             '&lt;li&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;',
             '&lt;li&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;',
@@ -125,7 +125,7 @@ document.write(
 function navBarDisplay() {
     document.write(
         &quot;&lt;nav&gt;&quot;,
-            `&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt; &lt;/a&gt;`,
+            `&lt;a href=\&quot;index.html\&quot;&gt;&lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot;&gt;&lt;/img&gt;&lt;/a&gt;`,
                 &quot;&lt;ul&gt;&quot;,
                         `&lt;li&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
                         `&lt;li&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
@@ -138,7 +138,7 @@ function navBarDisplay() {
             </code>
         </pre>
         <p class="indent">
-            Next this code need a extra step to display the code in the html.
+            Next this code need a extra step to display the code in the html. Since your JavaScript code is now in a function you have to take call the function. When I tried to do this in the same script element as the JavaScript code was linked in, it did not work. The simplest fix that I found to that was to take and call it in a script element right underneath it.
         </p>
         <pre>
             <code class="language-markup">
@@ -148,33 +148,65 @@ function navBarDisplay() {
 &lt;/header&gt;
             </code>
         </pre>
+        <p class="indent">
+            At this point the code will run the same as it was before, however since it is now a function you can give it a argument that will be used to tell the function what page it is on. I called my argument "page" as shown bellow.
+        </p>
+        <pre>
+            <code class="language-javascript">
+function navBarDisplay(page) {
+    document.write(
+        &quot;&lt;nav&gt;&quot;,
+            `&lt;a href=\&quot;index.html\&quot;&gt;&lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot;&gt;&lt;/img&gt;&lt;/a&gt;`,
+                &quot;&lt;ul&gt;&quot;,
+                        `&lt;li&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li&gt;&lt;a href=\&quot;about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li&gt;&lt;a href=\&quot;blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
+                &quot;&lt;/ul&gt;&quot;,
+        &quot;&lt;/nav&gt;&quot;
+    )
+}
+            </code>
+        </pre>
+        <p class="indent">
+            You can have the page set to a default value if you do not want to have to assign it a value every time you use the header. 
+        </p>
+        <p class="indent">
+            Now that you have a argument, go into your html and put the element into the code. For me this is "blog", since it is showing up on my blog page.
+        </p>
+        <pre>
+            <code class="language-markup">
+&lt;header&gt;
+    &lt;script src=&quot;navBar.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;navBarDisplay("blog")&lt;/script&gt;
+&lt;/header&gt;
+            </code>
+        </pre>
+        <p class="indent">
+            Next you need to change the HTML of the page based off of the page attribute. You can do this by a serries of if statements that checks what page it is on, and if the page is it on is equal to the attribute page value, it sets the class to active, and if it is not it just stays as a empty string. Make sure to change any strings that contain variables to tilde instead, otherwise the code will break.The code to do this is shown bellow.
+        </p>
         <pre>
             <code class="language-javascript">
 function navBarDisplay(page) {
     let indexClass = ""
     if (page == "index") {
         indexClass = "class=\"active\""
-    } else {
-        indexClass = ""
     }
+    let projectClass = ""
     if (page == "projects") {
         projectClass = "class=\"active\""
-    } else {
-        projectClass = ""
     }
+    let aboutClass = ""
     if (page == "about") {
         aboutClass = "class=\"active\""
-    } else {
-        aboutClass = ""
     }
+    let blogClass = ""
     if (page == "blog") {
         blogClass = "class=\"active\""
-    } else {
-        blogClass = ""
     }
     document.write(
         &quot;&lt;nav&gt;&quot;,
-            `&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt; &lt;/a&gt;`,
+            `&lt;a href=\&quot;index.html\&quot;&gt;&lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot;&gt;&lt;/img&gt;&lt;/a&gt;`,
                 &quot;&lt;ul&gt;&quot;,
                         `&lt;li ${indexClass}&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
                         `&lt;li ${projectClass}&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
@@ -186,37 +218,141 @@ function navBarDisplay(page) {
 }
             </code>
         </pre>
-        
+        <p class="indent">
+            And that is it, now your code will take and have a class tied to it depending on the page that it is on.
+        </p>
+        <h2>
+            Bonus Step 2: Changing Folders
+        </h2>
+        <p class="indent">
+            All of the code that you have written so far assumes that all of your HTML files are in the same folder. If you want to have some of your HTML files in a different folder it is not a hard thing to fix. For me, I have a folder called "blog" that I keep all of my blog posts in, and when I take and try to click on the links from its current state it doesn't link to the right page.
+        </p>
+        <p class="indent">
+            To make it so that we can have the html stored in different folders, there are only a few small adjustments that need to be made. First we need to take and add another argument to our function, to let it know if we are in a folder or not. I set this to have a default value of not being in a folder so that the only place I had to worry about it in was my blog posts.
+        </p>
         <pre>
             <code class="language-javascript">
-document.write(
-    &quot;&lt;nav&gt;&quot;,
-    `&lt;a href=\&quot;index.html\&quot;&gt; &lt;img src=\&quot;${upFolder}images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot; &gt;&lt;/img&gt; &lt;/a&gt;`,
-        &quot;&lt;ul&gt;&quot;,
-            `&lt;li ${indexClass}&gt;&lt;a href=\&quot;${upFolder}index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
-            `&lt;li ${projectClass}&gt;&lt;a href=\&quot;${upFolder}projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
-            `&lt;li ${aboutClass}&gt;&lt;a href=\&quot;${upFolder}about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
-            `&lt;li ${blogClass}&gt;&lt;a href=\&quot;${upFolder}blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
-        &quot;&lt;/ul&gt;&quot;,
-    &quot;&lt;/nav&gt;&quot;
-)
+function navBarDisplay(page, subfolder=false) {
+    let indexClass = ""
+    if (page == "index") {
+        indexClass = "class=\"active\""
+    }
+    let projectClass = ""
+    if (page == "projects") {
+        projectClass = "class=\"active\""
+    }
+    let aboutClass = ""
+    if (page == "about") {
+        aboutClass = "class=\"active\""
+    }
+    let blogClass = ""
+    if (page == "blog") {
+        blogClass = "class=\"active\""
+    }
+    document.write(
+        &quot;&lt;nav&gt;&quot;,
+            `&lt;a href=\&quot;index.html\&quot;&gt;&lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot;&gt;&lt;/img&gt;&lt;/a&gt;`,
+                &quot;&lt;ul&gt;&quot;,
+                        `&lt;li ${indexClass}&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${projectClass}&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${aboutClass}&gt;&lt;a href=\&quot;about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${blogClass}&gt;&lt;a href=\&quot;blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
+                &quot;&lt;/ul&gt;&quot;,
+        &quot;&lt;/nav&gt;&quot;
+    )
+}
             </code>
         </pre>
+        <p class="indent">
+            Now that you have a way to get weather or not you are in a folder you just need to add some code to change the HTML based on the information you give it. Take and add in a variable that sets a string to "../" if subfolder isk equal to true or to "" if it is equal to false. The ../ tells the browser to look up a folder for the file. Here is how your code should look now.
+        </p>
         <pre>
-            <code>
-<nav>
-    <a href="index.html"> <img src="images/logo.png" class="logo" alt="Logo" ></img></a>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-    </ul>
-</nav>
+            <code class="language-javascript">
+function navBarDisplay(page, subfolder=false) {
+    let indexClass = ""
+    if (page == "index") {
+        indexClass = "class=\"active\""
+    }
+    let projectClass = ""
+    if (page == "projects") {
+        projectClass = "class=\"active\""
+    }
+    let aboutClass = ""
+    if (page == "about") {
+        aboutClass = "class=\"active\""
+    }
+    let blogClass = ""
+    if (page == "blog") {
+        blogClass = "class=\"active\""
+    }
+    //new code
+    let upFolder = ""
+    if (subfolder == true) {
+        upFolder = "../"
+    }
+    //end of new code
+    document.write(
+        &quot;&lt;nav&gt;&quot;,
+            `&lt;a href=\&quot;index.html\&quot;&gt;&lt;img src=\&quot;images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot;&gt;&lt;/img&gt;&lt;/a&gt;`,
+                &quot;&lt;ul&gt;&quot;,
+                        `&lt;li ${indexClass}&gt;&lt;a href=\&quot;index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${projectClass}&gt;&lt;a href=\&quot;projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${aboutClass}&gt;&lt;a href=\&quot;about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${blogClass}&gt;&lt;a href=\&quot;blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
+                &quot;&lt;/ul&gt;&quot;,
+        &quot;&lt;/nav&gt;&quot;
+    )
+}
             </code>
         </pre>
-
-
+        <p class="indent">
+            With this code in place you can now just input your variable into the HTML right before the file name.
+        </p>
+        <pre>
+            <code class="language-javascript">
+function navBarDisplay(page, subfolder=false) {
+    let indexClass = ""
+    if (page == "index") {
+        indexClass = "class=\"active\""
+    }
+    let projectClass = ""
+    if (page == "projects") {
+        projectClass = "class=\"active\""
+    }
+    let aboutClass = ""
+    if (page == "about") {
+        aboutClass = "class=\"active\""
+    }
+    let blogClass = ""
+    if (page == "blog") {
+        blogClass = "class=\"active\""
+    }
+    //new code
+    let upFolder = ""
+    if (subfolder == true) {
+        upFolder = "../"
+    }
+    //end of new code
+    document.write(
+        &quot;&lt;nav&gt;&quot;,
+            `&lt;a href=\&quot;index.html\&quot;&gt;&lt;img src=\&quot;${upFolder}images/logo.png\&quot; class=\&quot;logo\&quot; alt=\&quot;Logo\&quot;&gt;&lt;/img&gt;&lt;/a&gt;`,
+                &quot;&lt;ul&gt;&quot;,
+                        `&lt;li ${indexClass}&gt;&lt;a href=\&quot;${upFolder}index.html\&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${projectClass}&gt;&lt;a href=\&quot;${upFolder}projects.html\&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${aboutClass}&gt;&lt;a href=\&quot;${upFolder}about.html\&quot;&gt;About&lt;/a&gt;&lt;/li&gt;`,
+                        `&lt;li ${blogClass}&gt;&lt;a href=\&quot;${upFolder}blog.html\&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;`,
+                &quot;&lt;/ul&gt;&quot;,
+        &quot;&lt;/nav&gt;&quot;
+    )
+}
+            </code>
+        </pre>
+        <h2>
+            Questions? Feedback?
+        </h2>
+        <p class="indent">
+            Thanks for reading the article, I hope you have found it helpful. If you have any questions or feedback, you can reach me at my email alowtron@gmail.com. With that said, always keep learning and have a wonderful day.
+        </p>
     </main>
     <footer>
         <script src="../footerBar.js"></script>
