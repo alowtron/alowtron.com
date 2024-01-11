@@ -1,37 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            Alowtron-Blog
-        </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="images/logo.png">
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <script src="navBar.js"></script>
-            <script>navBarDisplay("blog")</script>
-        </header>
-        
-        <main>
-            <h1>Blog</h1>
-            <h2>Recent Posts</h2>
-            <!-- Post Name {h3}-->
-            <!-- Post Description {p}-->
-            <div class="blog-link-display">
-                <a href="blog/nav-bar-template-with-js.html">
-                    <h3 class="minus-margin">Navigation Bar Templating With JavaScript</h3>
-                    <div class="blog-date">1/8/2024</div>
-                    <p>temp text</p>
-                </a>
+
+<head>
+    <title>
+        Alowtron-Blog
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Code for displaying stuff in a way that is only used on this page */
+        .blog-link-display {
+            padding-top: 0.1rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 0.1rem;
+            border-radius: 0.3rem;
+            background-color: #242424;
+            /* temp Code? */
+        }
+
+        .blog-link-display:hover {
+            background-color: #202835;
+        }
+
+        .minus-margin {
+            margin-bottom: -3%;
+        }
+
+        .blog-date {
+            text-align: right;
+        }
+
+        /* Code for grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 65% 10% 25%;
+            /* grid-template-rows: 100rem; */
+            /* grid-template-rows: 500px, 500px, 15rem, 15rem; */
+        }
+
+        .grid-left {
+            max-width: 50rem;
+        }
+        /* Overriding some body elements here so things display right */
+        @media only screen and (min-width: 85rem) {
+            main {
+                width: 75rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <script src="navBar.js"></script>
+        <script>navBarDisplay("blog")</script>
+    </header>
+
+    <main>
+        <h1>Blog</h1>
+        <!-- Post Name {h3}-->
+        <!-- Post Description {p}-->
+        <div class="grid">
+            <div class="grid-left">
+                <h2>Recent Posts</h2>
+                <div class="blog-link-display">
+                    <a href="blog/nav-bar-template-with-js.html">
+                        <h3 class="minus-margin">Navigation Bar Templating With JavaScript</h3>
+                        <div class="blog-date">1/8/2024</div>
+                        <p>Learn how to make a template for a Element in you HTML with JavaScript.</p>
+                    </a>
+                </div>
             </div>
             
-        </main>
-        <footer>
-            <script src="footerBar.js"></script>
-        </footer>
-    </body>
+            <div>
+                <!-- just a blank div for spacing -->
+            </div>
+            <div>
+                <h2>
+                    Categories
+                </h2>
+            </div>
+        </div>
+        
+
+    </main>
+    <footer>
+        <script src="footerBar.js"></script>
+    </footer>
+</body>
 
 </html>
