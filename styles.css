@@ -84,14 +84,17 @@ h2 {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
-a {
-    color: silver;
-    text-decoration: none;
-}
+
 html {
     background-color: #2A3035;
     color: silver;
 }
+
+a {
+    color: silver;
+    text-decoration: none;
+}
+
 
 .indent {
     text-indent: 2rem;
