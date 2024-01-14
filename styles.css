@@ -7,7 +7,7 @@ footer {
     padding-bottom: 0.5rem;
 }
 footer ul {
-    grid-column-start: 3;
+
     list-style-type: none;
 }
 footer li a {
@@ -95,8 +95,14 @@ a {
     text-decoration: none;
 }
 
-
 .indent {
     text-indent: 2rem;
 }
+
+/* Main body mobile */
+main {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 
