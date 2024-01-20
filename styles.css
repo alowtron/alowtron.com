@@ -98,11 +98,25 @@ a {
 .indent {
     text-indent: 2rem;
 }
+/* Button Styling */
+button {
+    background-color: #242424;
+    border: none;
+    border-radius: .3rem;
+    color: silver;
+    padding: 0.5rem;
+}
+
+button:hover {
+    background-color: #202835;
+}
 
 /* Main body mobile */
-main {
-    margin-left: 1rem;
-    margin-right: 1rem;
+@media only screen and (max-width: 1000px) {
+    main {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 
