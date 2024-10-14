@@ -9,15 +9,23 @@
         <link rel="icon" type="image/png" href="images/logo.png">
         <link rel="stylesheet" type="text/css" href="styles.css">
         <style>
-            .grid {
-                display: grid;
-                grid-template-columns: 20%, 20%, 20%, 20%, 20%;
-                grid-template-rows: 500px, 500px, 15rem, 15rem;
+            @media only screen and (min-width: 750px) {
+                .grid {
+                    display: grid;
+                    grid-template-columns: 20%, 20%, 20%, 20%, 20%;
+                    grid-template-rows: 500px, 500px, 15rem, 15rem;
+                    justify-content: center;
+                    column-gap: 100px
+                }
             }
             .h1Class {
                 grid-column-start: 1;
                 grid-column-end: 3;
                 grid-row-start: 1;
+            }
+            .education p {
+                margin: 0 auto;
+                text-align: center;
             }
         </style>
         <script>
@@ -31,26 +39,70 @@
         </header>
         
         <main>
+            <!-- I super janky grid layout (alternates left and right) -->
             <div class="grid">
-                <h1 class="h1Class">Web Application Developer/Software Developer</h1>
-                <div>Temp</div>
-                <div>temp</div>
-                <div>even more temp</div>
-                <div>also temp</div>
-            </div>
-            <div class="center">
-                <h2>
-                    Technologies Known
-                </h2>
+                <h1 class="h1Class">I am A...</h1>
+                <!-- Left -->
+                <div>
+                    <h2>
+                        Web Application Developer
+                    </h2>
+                    <div>
+                        <p>
+                            <b>Programming Languages:</b> HTML, CSS, JavaScript, PHP
+                        </p>
+                        <p>
+                            <b>Frameworks/Libraries: </b>Node.js, Django, Vue.js, Electron, Bootstrap
+                        </p>
+                        <p>
+                            <b>Databases: </b>MySQL, NoSQL
+                        </p>
+    
+                    </div>
+                </div>
+                <!-- Right -->
+                <div>
+                    <h2>
+                        Software Application Developer
+                    </h2>
+                    <div>
+
+                        <p>
+                            <b>Programming Languages:</b> Python, Kotlin
+                        </p>
+                        <p>
+                            <b>Frameworks/Libraries: </b> Electron
+                        </p>
+                    </div>
+                </div>
+                <!-- Left -->
+               
+                <!-- Right -->
+                
+            </div>  
+            <div class="education">
+                <h1>
+                    Education
+                </h1>
                 <p>
-                    HTML, CSS, JavaScript, PHP, MySQL, Python
+                    <b>Ivy Tech, Fort Wayne, IN</b>
+                    <br>
+                    <i>May 2024</i>
+                    <br>
+                    Certificate in Software Application Developer, Deans: (GPA: 3.89/4.0)
+                </p>
+                <p>
+                    <b>Ivy Tech, Fort Wayne, IN</b>
+                    <br>
+                    <i>Expected December 2024</i>
+                    <br>
+                    Certificate in Software Application Development, Deans: (GPA: 3.89/4.0)
                 </p>
             </div>
-            
         </main>
-        <footer>
+        <!-- <footer>
             <script src="footerBar.js"></script>
-        </footer>
+        </footer> -->
     </body>
 
 </html>
