@@ -121,3 +121,8 @@ button:hover {
 }
 
 
+#aboutBox {
+    width: max-content;
+    text-align: left;
+    margin: auto;
+}
